@@ -6,6 +6,14 @@ spring:
     password: root
     username: root
 
+logging:
+  level:
+    ROOT: WARN
+    ch.qos.logback: WARN
+    org.springframework: debug
+    org.apache.ibatis: debug
+    com.wfc: DEBUG
+
 
 
 
