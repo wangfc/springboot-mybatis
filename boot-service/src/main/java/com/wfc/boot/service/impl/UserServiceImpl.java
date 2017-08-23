@@ -3,17 +3,21 @@ package com.wfc.boot.service.impl;
 import com.wfc.boot.entity.User;
 import com.wfc.boot.mapper.UserMapper;
 import com.wfc.boot.service.UserService;
+import com.wfc.boot.support.BaseServiceImpl;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl extends BaseServiceImpl<User> implements UserService {
+
     @Resource
-    UserMapper userMapper;
+    private UserMapper userMapper;
+
     @Override
     public User find(User qm) {
-        User user = userMapper.selectOne(qm);
-        return user;
+        return userMapper.selectOne(qm);
     }
+
+
 }

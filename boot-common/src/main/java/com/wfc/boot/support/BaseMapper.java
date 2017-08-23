@@ -1,9 +1,11 @@
 package com.wfc.boot.support;
 
-import java.io.Serializable;
+import org.apache.ibatis.session.RowBounds;
+import tk.mybatis.mapper.common.Mapper;
+
 import java.util.List;
 
-public interface BaseService<T>{
+public interface BaseMapper<T> extends Mapper<T>{
 
     int deleteByPrimaryKey(Object o);
 
@@ -19,7 +21,6 @@ public interface BaseService<T>{
 
     T selectByPrimaryKey(Object o);
 
-    
     int selectCount(T t);
 
     List<T> select(T t);
@@ -40,4 +41,7 @@ public interface BaseService<T>{
 
     int updateByExampleSelective(T t, Object o);
 
+    List<T> selectByExampleAndRowBounds(Object o, RowBounds rowBounds);
+
+    List<T> selectByRowBounds(T t, RowBounds rowBounds);
 }

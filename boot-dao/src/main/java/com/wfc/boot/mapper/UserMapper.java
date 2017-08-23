@@ -1,8 +1,11 @@
 package com.wfc.boot.mapper;
 
 import com.wfc.boot.entity.User;
-import tk.mybatis.mapper.common.Mapper;
+import org.springframework.stereotype.Repository;
+import tk.mybatis.mapper.common.BaseMapper;
 
-public interface UserMapper extends Mapper<User>{
+@Repository
+public interface UserMapper extends BaseMapper<User>{
+
 
 }
