@@ -9,7 +9,7 @@
 	</resultMap>
 
 
-	<insert id="insert" useGeneratedKeys="true">
+	<!--<insert id="insert" useGeneratedKeys="true">
 		insert into t_user
 		(username,password) values (#{username},#{password})
 	</insert>
@@ -17,7 +17,7 @@
 		select * from t_user
 		<trim prefix="where" prefixOverrides="and|or">
 			<if test="username!=null">
-				
+
 				and username=#{username}
 			</if>
 			<if test="password!=null">
@@ -25,10 +25,10 @@
 			</if>
 		</trim>
 
-	</select>
-	
-	<select id="find" resultMap= "UserResult">
+	</select>-->
+
+	<select id="findaaa" resultMap= "UserResult">
 		select * from t_user where id = #{id}
 	</select>
 
-</mapper> 
+</mapper>

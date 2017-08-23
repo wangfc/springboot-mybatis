@@ -1,7 +1,3 @@
-mybatis:
-  mapper-locations: classpath:mapper/*Mapper.xml
-  typeAliasesPackage: com.wfc.boot.entity
-
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource

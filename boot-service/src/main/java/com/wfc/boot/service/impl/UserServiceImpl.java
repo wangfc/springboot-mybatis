@@ -13,7 +13,7 @@ public class UserServiceImpl implements UserService {
     UserMapper userMapper;
     @Override
     public User find(User qm) {
-        User user = userMapper.find(qm);
+        User user = userMapper.selectOne(qm);
         return user;
     }
 }

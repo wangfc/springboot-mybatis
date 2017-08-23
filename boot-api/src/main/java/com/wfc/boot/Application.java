@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.client.RestTemplate;
 
 @EnableTransactionManagement
-@MapperScan( basePackages = "com.wfc.boot.mapper" )
+//@MapperScan( basePackages = "com.wfc.boot.mapper")
 @SpringBootApplication
 public class Application {
 

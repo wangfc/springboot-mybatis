@@ -1,17 +1,22 @@
 package com.wfc.boot.entity;
 
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Table(name = "t_user")
 public class User {
-    private long id;
+    @Id
+    private Integer id;
 
     private String username;
 
     private String password;
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
