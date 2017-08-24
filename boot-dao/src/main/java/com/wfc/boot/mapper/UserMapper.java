@@ -1,7 +1,6 @@
 package com.wfc.boot.mapper;
 
 import com.wfc.boot.entity.User;
-import com.wfc.boot.support.BaseMapper;
 import org.springframework.stereotype.Repository;
 import tk.mybatis.mapper.common.Mapper;
 

@@ -8,6 +8,8 @@ public interface BaseService<T>{
 
     Mapper getMapper();
 
+    void checkMapper ();
+
     int deleteByPrimaryKey(Object o);
 
     int delete(T t);

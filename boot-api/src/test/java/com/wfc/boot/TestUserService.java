@@ -1,7 +1,6 @@
 package com.wfc.boot;
 
 import com.alibaba.fastjson.JSON;
-import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.wfc.boot.entity.User;
 import com.wfc.boot.mapper.UserMapper;
@@ -54,5 +53,13 @@ public class TestUserService {
         u.setId(1);
         List<User> select = userService.select(u);
         logger.info(""+select);
+    }
+
+    @Test
+    public void testInsert()throws Throwable{
+        User u = new User();
+        u.setUsername("username8");
+        u.setPassword("password8");
+        userService.insert(u);
     }
 }
