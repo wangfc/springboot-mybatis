@@ -1,9 +1,12 @@
 package com.wfc.boot.support;
 
-import java.io.Serializable;
+import tk.mybatis.mapper.common.Mapper;
+
 import java.util.List;
 
 public interface BaseService<T>{
+
+    Mapper getMapper();
 
     int deleteByPrimaryKey(Object o);
 

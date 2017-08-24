@@ -6,90 +6,89 @@ import java.util.List;
 
 @Service
 public abstract class BaseServiceImpl<T> implements  BaseService<T> {
-    protected BaseMapper baseMapper;
 
     @Override
     public int deleteByPrimaryKey(Object o) {
-        return baseMapper.deleteByPrimaryKey(o);
+        return getMapper().deleteByPrimaryKey(o);
     }
 
     @Override
     public int delete(T t) {
-        return baseMapper.delete(t);
+        return getMapper().delete(t);
     }
 
     @Override
     public int insert(T t) {
-        return baseMapper.insert(t);
+        return getMapper().insert(t);
     }
 
     @Override
     public int insertSelective(T t) {
-        return baseMapper.insertSelective(t);
+        return getMapper().insertSelective(t);
     }
 
     @Override
     public boolean existsWithPrimaryKey(Object o) {
-        return baseMapper.existsWithPrimaryKey(o);
+        return getMapper().existsWithPrimaryKey(o);
     }
 
     @Override
     public List<T> selectAll() {
-        return baseMapper.selectAll();
+        return getMapper().selectAll();
     }
 
     @Override
     public T selectByPrimaryKey(Object o) {
-        return(T)baseMapper.selectByPrimaryKey(o);
+        return(T) getMapper().selectByPrimaryKey(o);
     }
 
     @Override
     public int selectCount(T t) {
-        return baseMapper.selectCount(t);
+        return getMapper().selectCount(t);
     }
 
     @Override
     public List<T> select(T t) {
-        return baseMapper.select(t);
+        return getMapper().select(t);
     }
 
     @Override
     public T selectOne(T t) {
-        return (T)baseMapper.selectOne(t);
+        return (T) getMapper().selectOne(t);
     }
 
     @Override
     public int updateByPrimaryKey(T t) {
-        return baseMapper.updateByPrimaryKey(t);
+        return getMapper().updateByPrimaryKey(t);
     }
 
     @Override
     public int updateByPrimaryKeySelective(T t) {
-        return baseMapper.updateByPrimaryKeySelective(t);
+        return getMapper().updateByPrimaryKeySelective(t);
     }
 
     @Override
     public int deleteByExample(Object o) {
-        return baseMapper.deleteByExample(o);
+        return getMapper().deleteByExample(o);
     }
 
     @Override
     public List<T> selectByExample(Object o) {
-        return baseMapper.selectByExample(o);
+        return getMapper().selectByExample(o);
     }
 
     @Override
     public int selectCountByExample(Object o) {
-        return baseMapper.selectCountByExample(o);
+        return getMapper().selectCountByExample(o);
     }
 
     @Override
     public int updateByExample(T t, Object o) {
-        return baseMapper.updateByExample(t,o);
+        return getMapper().updateByExample(t,o);
     }
 
     @Override
     public int updateByExampleSelective(T t, Object o) {
-        return baseMapper.updateByExampleSelective(t,0);
+        return getMapper().updateByExampleSelective(t,0);
     }
 }
