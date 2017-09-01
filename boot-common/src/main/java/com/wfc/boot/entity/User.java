@@ -2,6 +2,7 @@ package com.wfc.boot.entity;
 
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Table(name = "t_user")
 public class User {
@@ -11,6 +12,17 @@ public class User {
     private String username;
 
     private String password;
+
+    @Transient
+    private Role role;
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
 
     public Integer getId() {
         return id;

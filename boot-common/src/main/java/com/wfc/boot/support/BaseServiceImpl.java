@@ -1,5 +1,6 @@
 package com.wfc.boot.support;
 
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -7,16 +8,20 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public abstract class BaseServiceImpl<T> implements  BaseService<T> {
+public abstract class BaseServiceImpl<T> implements  BaseService<T> ,InitializingBean{
 
     public BaseServiceImpl(){
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
         checkMapper();
     }
 
     @Override
     public void checkMapper() {
         if (getMapper() == null ){
-            throw  new RuntimeException(" ‘mapper’ can not be null ");
+            throw  new RuntimeException(" ‘mapper’ can not be null "); // 
         }
     }
 
