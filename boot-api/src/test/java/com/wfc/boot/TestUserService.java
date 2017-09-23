@@ -50,7 +50,7 @@ public class TestUserService {
     @Test
     public void test(){
         User u = new User();
-        u.setId(1);
+        PageHelper.startPage(1,3);
         List<User> select = userService.select(u);
         logger.info(""+select);
     }

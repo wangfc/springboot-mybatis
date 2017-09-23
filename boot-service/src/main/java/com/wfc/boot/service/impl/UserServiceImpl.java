@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.common.Mapper;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class UserServiceImpl extends BaseServiceImpl<User> implements UserService {
@@ -23,6 +24,12 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
     @Override
     public User find(User qm) {
         return userMapper.selectOne(qm);
+    }
+
+    @Override
+    public List<User> getUserList(User qm) throws Exception{
+
+        return null;
     }
 
 }

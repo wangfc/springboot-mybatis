@@ -1,6 +1,7 @@
 package com.wfc.boot.configration;
 
 import com.github.pagehelper.PageHelper;
+import com.wfc.boot.interceptor.PageIntercept;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -36,7 +37,7 @@ public class MybatisConfigurer {
         pageHelper.setProperties(properties);
 
         //添加插件
-        bean.setPlugins(new Interceptor[]{pageHelper});
+        bean.setPlugins(new Interceptor[]{new PageIntercept()});
 
         //添加XML目录
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
